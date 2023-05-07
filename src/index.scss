@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap');
+
+$font: 'Magra', sans-serif;
+
+// Colors
+$white-color: #ffffff;
+$offwhite-color: #d1d1d1;
+$primary-color: #222831;
+$secondary-color: #393e46;
+$tertiary-color: #00adb5;
+$heavy-pink-color: #8e00cc;
+$medium-pink-color: #b100ff;
+$light-pink-color: #c133ff;
+$lightest-pink-color: #d066ff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input {
+  font-family: $font;
+}
