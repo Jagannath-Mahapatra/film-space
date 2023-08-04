@@ -1,0 +1,33 @@
+@import '../../index';
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: $secondary-color;
+  height: 5rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  transition: opacity 0.5s linear;
+
+  @include media-query($max-width: 768px) {
+    height: 4rem;
+  }
+
+  .logo {
+    margin: 0.1rem;
+    cursor: pointer;
+  }
+
+  .search-icon {
+    margin: 0 1rem;
+    justify-self: center;
+    align-self: center;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    color: $offwhite-color;
+  }
+}

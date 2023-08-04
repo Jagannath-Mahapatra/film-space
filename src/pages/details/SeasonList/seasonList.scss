@@ -1,0 +1,73 @@
+@import '../../../index.scss';
+
+.collapsible-button {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 2rem 0 2rem;
+  background-color: $lightest-pink-color;
+  color: $secondary-color;
+  cursor: pointer;
+  padding: 18px;
+  width: calc(100% - 4rem);
+  border: none;
+  text-align: left;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $light-pink-color;
+  }
+  svg {
+    transition: transform 0.125s linear;
+  }
+  svg[class='down'] {
+    transform: rotate(90deg);
+  }
+
+  &:nth-last-child(2)[expanded='false'] {
+    margin-bottom: 1rem;
+  }
+}
+
+.collapsible-content {
+  display: flex;
+  margin: 0 2rem;
+  gap: 1rem;
+  background-color: $primary-color;
+  color: $white-color;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+
+  @include media-query($max-width: 425px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .more-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      display: flex;
+      width: 100%;
+      padding: 1rem;
+      align-items: center;
+
+      @include media-query($max-width: 425px) {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+
+  .episode-poster {
+    span {
+      img {
+        height: 15rem;
+        width: auto;
+        margin: 1rem;
+        object-fit: contain;
+      }
+    }
+  }
+}

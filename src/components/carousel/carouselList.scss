@@ -1,0 +1,76 @@
+@import '../../index.scss';
+
+.carousel-container {
+  margin: 1rem 0;
+
+  h1 {
+    margin: 1rem 0;
+    padding: 1rem 1rem;
+    font-size: 2rem;
+    color: $light-pink-color;
+    text-transform: uppercase;
+    background-color: $secondary-color;
+    font-family: $font-heading;
+
+    @include media-query($max-width: 768px) {
+      font-size: 1.6rem;
+    }
+
+    @include media-query($max-width: 425px) {
+      display: block;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+
+  .swiper {
+    margin: 0 1rem;
+    overflow: hidden;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      //overwrite default buttons
+      display: none;
+    }
+
+    .swiper-wrapper {
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: auto;
+
+        .poster-title-link {
+          display: block;
+          color: $white-color;
+          font-family: $font-heading;
+          text-align: center;
+          text-decoration: none;
+
+          &:hover {
+            color: $lightest-pink-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    @include media-query($max-width: 425px) {
+      .swiper-wrapper {
+        .swiper-slide {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          .poster-title-link {
+            .poster-title {
+              margin: 0.5rem;
+              z-index: 3;
+            }
+          }
+        }
+      }
+    }
+  }
+}

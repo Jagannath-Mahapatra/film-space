@@ -1,0 +1,88 @@
+// @import '../../index.scss';
+
+// .data-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   color: $white-color;
+//   padding: 1rem;
+
+//   .no-results {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+//     width: 100%;
+//     height: 10rem;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: $secondary-color;
+//     border-radius: 1rem;
+//     color: $heavy-pink-color;
+//     font-family: $font-heading;
+
+//     p {
+//       font-size: 1.25rem;
+//       text-transform: uppercase;
+//     }
+
+//     .homepage-link {
+//       text-decoration: none;
+//       margin: 1rem;
+//       border: 1rem solid $heavy-pink-color;
+//       background-color: $heavy-pink-color;
+//       border-radius: 1rem;
+//       transition: 0.25s;
+//       color: $offwhite-color;
+
+//       &:hover {
+//         backface-visibility: hidden;
+//         transform: translate(-0.1rem, -0.1rem);
+//         box-shadow: 0.2rem 0.2rem 0.1rem $lightest-pink-color;
+//       }
+//     }
+//   }
+
+//   .media-list-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 1rem;
+
+//     .media-card {
+//       display: flex;
+//       flex-direction: column;
+//       width: min-content;
+//       max-width: auto;
+//       flex: 1 0 auto;
+//       align-items: center;
+
+//       .media-poster {
+//         span {
+//           img {
+//             height: 20rem;
+//             width: auto;
+//             margin: 1rem;
+//             object-fit: contain;
+//           }
+//         }
+//       }
+
+//       .media-link {
+//         display: block;
+//         color: $white-color;
+//         font-family: $font-heading;
+//         text-align: center;
+//         text-decoration: none;
+
+//         &:hover {
+//           color: $lightest-pink-color;
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+
+//   .spinner {
+//     position: relative;
+//     justify-self: center;
+//   }
+// }

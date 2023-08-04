@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-$font: 'Magra', sans-serif;
+$font-heading: 'Kanit', sans-serif;
+$font-body: 'Roboto', sans-serif;
 
-// Colors
 $white-color: #ffffff;
 $offwhite-color: #d1d1d1;
-$primary-color: #222831;
-$secondary-color: #393e46;
-$tertiary-color: #00adb5;
+$primary-color: #111111;
+$secondary-color: #000000;
 $heavy-pink-color: #8e00cc;
-$medium-pink-color: #b100ff;
 $light-pink-color: #c133ff;
 $lightest-pink-color: #d066ff;
 
@@ -19,8 +18,23 @@ $lightest-pink-color: #d066ff;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body,
 button,
 input {
-  font-family: $font;
+  font-family: $font-body;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+}
+
+@mixin media-query($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
 }

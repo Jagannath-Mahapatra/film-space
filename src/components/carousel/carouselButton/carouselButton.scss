@@ -1,0 +1,20 @@
+@import '../../../index.scss';
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: $secondary-color;
+  opacity: 0.85;
+  border-radius: 0.1rem;
+  transition: box-shadow 0.25s ease-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 0.5rem $offwhite-color;
+  }
+}
