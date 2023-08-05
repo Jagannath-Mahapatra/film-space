@@ -18,9 +18,10 @@
   }
   svg {
     transition: transform 0.125s linear;
-  }
-  svg[class='down'] {
-    transform: rotate(90deg);
+
+    &[class='down'] {
+      transform: rotate(90deg);
+    }
   }
 
   &:nth-last-child(2)[expanded='false'] {

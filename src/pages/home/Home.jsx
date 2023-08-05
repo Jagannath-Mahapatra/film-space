@@ -1,4 +1,4 @@
-import CarouselList from '../../components/carousel/carouselList';
+import CarouselList from '../../components/carousel/CarouselList';
 import './home.scss';
 import Search from './search/Search';
 

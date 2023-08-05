@@ -7,7 +7,7 @@ import LazyLoadImg from '../../components/lazyLoadImg/LazyLoadImg';
 import posterPlaceholder from '../../assets/poster-placeholder.jpg';
 import { useSelector } from 'react-redux';
 
-const InfiniteScroll = ({ query, fetchURL }) => {
+const InfiniteScroll = ({ query, fetchURL, mediaType }) => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -32,8 +32,14 @@ const InfiniteScroll = ({ query, fetchURL }) => {
   }, []);
 
   useEffect(() => {
-    getMediaData(fetchURL);
-  }, [currentPage]);
+    if (mediaType) {
+      getMediaData(fetchURL);
+    }
+  }, [currentPage, mediaType]);
+
+  useEffect(() => {
+    setRenderedMedia([]);
+  }, [mediaType]);
 
   const handleInfiniteScroll = async () => {
     try {
@@ -62,32 +68,36 @@ const InfiniteScroll = ({ query, fetchURL }) => {
       )}
       <div className='media-list-container'>
         {renderedMedia
-          ?.filter((result) => result?.media_type !== 'person')
-          ?.map((result) => (
-            <div key={result.id} className='media-card'>
-              <div className='media-poster'>
-                <LazyLoadImg
-                  src={
-                    result?.poster_path
-                      ? imageBaseUrl + result?.poster_path
-                      : posterPlaceholder
-                  }
-                  alt='media-poster'
-                  placeholder={posterPlaceholder}
-                />
+          ?.filter((result) => result?.media_type ?? mediaType !== 'person')
+          ?.map((result) => {
+            return (
+              <div key={result.id} className='media-card'>
+                <div className='media-poster'>
+                  <LazyLoadImg
+                    src={
+                      result?.poster_path
+                        ? imageBaseUrl + result?.poster_path
+                        : posterPlaceholder
+                    }
+                    alt='media-poster'
+                    placeholder={posterPlaceholder}
+                  />
+                </div>
+                <Link
+                  className='media-link'
+                  to={`../../${result?.media_type ?? mediaType}/${result?.id}`}
+                  state={{
+                    fetchUrl: `${result?.media_type ?? mediaType}/${
+                      result?.id
+                    }`,
+                    mediaType: result?.media_type ?? mediaType,
+                  }}
+                >
+                  {result?.title ?? result?.name}
+                </Link>
               </div>
-              <Link
-                className='media-link'
-                to={`../../${result?.media_type}/${result?.id}`}
-                state={{
-                  fetchUrl: `${result?.media_type}/${result?.id}`,
-                  mediaType: result?.media_type,
-                }}
-              >
-                {result?.title ?? result?.name}
-              </Link>
-            </div>
-          ))}
+            );
+          })}
       </div>
       {loading && <LoadingSpinner />}
     </div>

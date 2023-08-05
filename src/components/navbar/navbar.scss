@@ -16,9 +16,13 @@
     height: 4rem;
   }
 
-  .logo {
+  .logo-container {
     margin: 0.1rem;
-    cursor: pointer;
+    flex-grow: 1;
+    .logo {
+      cursor: pointer;
+      height: 100%;
+    }
   }
 
   .search-icon {
@@ -29,5 +33,79 @@
     height: 2rem;
     cursor: pointer;
     color: $offwhite-color;
+  }
+
+  .browse-container-desktop {
+    display: flex;
+    height: 100%;
+    z-index: 3;
+
+    a {
+      background: none;
+      border: none;
+      color: $lightest-pink-color;
+      margin: auto;
+      cursor: pointer;
+      font-family: $font-heading;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+  }
+
+  .toggle-browse-mobile {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      color: $lightest-pink-color;
+      border: none;
+      transition: transform 0.125s linear;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: transform 0.125s linear;
+
+        &[class='rotated'] {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.browse-container-mobile {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  transition: max-height 0.125s linear;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  background-color: $secondary-color;
+  z-index: 3;
+
+  a {
+    background: none;
+    border: none;
+    color: $lightest-pink-color;
+    margin: 1rem 1rem;
+    cursor: pointer;
+    font-family: $font-heading;
+    font-weight: bold;
+    text-decoration: none;
   }
 }
