@@ -11,6 +11,7 @@ import Browse from './pages/browse/Browse';
 import { fetchDataFromAPI } from './utils/api';
 import { setConfiguration } from './store/configurationSlice';
 import { useDispatch } from 'react-redux';
+import Footer from './components/footer/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
           <Route path='/search/:query' element={<SearchResults />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
