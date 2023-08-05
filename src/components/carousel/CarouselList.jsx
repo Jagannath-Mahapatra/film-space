@@ -32,7 +32,6 @@ const CarouselList = ({ heading, url, mediaType }) => {
     <div className='carousel-container'>
       <h1>{heading}</h1>
       <Swiper
-        autoHeight={true}
         navigation={true}
         rewind={true}
         modules={[Navigation]}
