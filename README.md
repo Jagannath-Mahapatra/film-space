@@ -1,5 +1,7 @@
 # Film Space - A Movie and TV Database
 
+[Deployed Link](https://film-space.netlify.app/)
+
 It is a website that provides information about various movies and tv shows. It showcases the popular, upcoming and top-rated movies and tv shows.
 It provides data about the movie synopsis, rating, tv show season details, similar movies, etc.
 The data is obtained from [TMDB API](https://developer.themoviedb.org/docs).
