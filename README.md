@@ -15,6 +15,10 @@ Various features like carousels, infinite scrolling, video playback, lazy loadin
 | ![3](https://github.com/Jagannath-Mahapatra/film-space/assets/107102771/27c5e435-d9b8-4fd0-9d31-e68642d54df0) | ![4](https://github.com/Jagannath-Mahapatra/film-space/assets/107102771/e5b96329-261b-45a9-8f9f-f16250f67473) |
 | ![5](https://github.com/Jagannath-Mahapatra/film-space/assets/107102771/e4559075-4888-4fcb-9afe-26afa9e3973d) | ![6](https://github.com/Jagannath-Mahapatra/film-space/assets/107102771/ef5bc20c-10a3-412a-b185-431f90fd6193) |
 
+# Environment Variables
+
+- ```VITE_APP_TMDB_TOKEN```: TMDB access token
+
 # Tech Used
 
 HTML, SASS, ReactJS, Redux Toolkit
